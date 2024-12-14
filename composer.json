@@ -1,5 +1,5 @@
 {
-    "name": "kobeni/installer",
+    "name": "renkouzuki/kobeni-installer",
     "description": "Installer for Kobeni Framework",
     "type": "composer-plugin",
     "license": "MIT",
