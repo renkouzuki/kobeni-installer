@@ -8,12 +8,11 @@ class NewCommand
 
     public function run(array $argv)
     {
-        // Get project name from command line
-        $this->directory = $argv[1] ?? null;
+        $this->directory = $argv[2] ?? null;
 
         if (!$this->directory) {
             echo "Please provide a project name.\n";
-            echo "Usage: kobeni new project-name\n";
+            echo "Usage: php kobeni my-project\n";
             exit(1);
         }
 
@@ -36,7 +35,7 @@ class NewCommand
         echo "Creating new Kobeni Framework project...\n";
         // Clone your framework repository
         passthru("git clone https://github.com/renkouzuki/Kobeni-Framework {$this->directory}");
-        
+
         echo "Installing dependencies...\n";
         passthru("cd {$this->directory} && composer install");
     }
