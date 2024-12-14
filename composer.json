@@ -18,11 +18,5 @@
     "extra": {
         "class": "Kobeni\\Installer\\InstallerPlugin"
     },
-    "bin": ["bin/kobeni"],
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../path/to/your/kobeni-installer"
-        }
-    ]
+    "bin": ["bin/kobeni"]
 }

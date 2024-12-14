@@ -35,7 +35,7 @@ class NewCommand
     {
         echo "Creating new Kobeni Framework project...\n";
         // Clone your framework repository
-        passthru("git clone https://github.com/your-username/kobeni-framework {$this->directory}");
+        passthru("git clone https://github.com/renkouzuki/Kobeni-Framework {$this->directory}");
         
         echo "Installing dependencies...\n";
         passthru("cd {$this->directory} && composer install");
