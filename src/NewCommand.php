@@ -8,15 +8,19 @@ class NewCommand
 
     public function run(array $argv)
     {
-        $this->directory = $argv[2] ?? null;
-
-        if (!$this->directory) {
-            echo "Please provide a project name.\n";
-            echo "Usage: php kobeni my-project\n";
+        // Check if we have the "new" command and a project name
+        if (!isset($argv[1]) || $argv[1] !== 'new' || !isset($argv[2])) {
+            echo "Please use the format: php kobeni new project-name\n";
             exit(1);
         }
 
-        $this->ensureDirectoryDoesNotExist();
+        $this->directory = $argv[2];
+
+        if (is_dir($this->directory)) {
+            echo "Project directory already exists.\n";
+            exit(1);
+        }
+
         $this->download();
         $this->configure();
         $this->finish();
